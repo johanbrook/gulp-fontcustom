@@ -1,0 +1,41 @@
+{
+  "name": "gulp-fontcustom",
+  "version": "0.1.0",
+  "homepage": "",
+  "description": "A gulp plugin to generate icon fonts with Fontcustom from SVG files.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "gulp-util": "*",
+    "underscore": "*",
+    "q-io": "~1.11.0",
+    "child-process-promise": "~0.2.0-SNAPSHOT.1389671754086",
+    "q": "~1.0.1",
+    "partial": "0.0.3",
+    "through2": "~0.4.2"
+  },
+  "devDependencies": {
+    "gulp": "*",
+    "should": "*",
+    "gulp-mocha": "*",
+    "rimraf": "~2.2.8",
+    "event-stream": "~3.1.5"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "keywords": [
+    "gulp",
+    "gulpplugin",
+    "fontcustom",
+    "icon",
+    "font"
+  ],
+  "author": {
+    "name": "Johan Brook",
+    "url": "http://johanbrook.com"
+  },
+  "license": "MIT"
+}
