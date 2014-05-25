@@ -53,6 +53,7 @@ See the [Fontcustom docs](https://github.com/FontCustom/fontcustom/) for further
 
 - Enable putting stylesheets/preview HTML in another destination
 - Support all relevant configuration options in Fontcustom
+- Better tests ...
 
 ## Similar plugins
 
