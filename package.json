@@ -29,7 +29,8 @@
     "should": "*",
     "gulp-mocha": "*",
     "rimraf": "~2.2.8",
-    "event-stream": "~3.1.5"
+    "event-stream": "~3.1.5",
+    "gulp-open": "~0.2.8"
   },
   "scripts": {
     "test": "gulp test"

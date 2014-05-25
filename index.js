@@ -9,6 +9,13 @@ var through = require('through2'),
 
 const PLUGIN_NAME = "gulp-fontcustom"
 
+/**
+*  Takes an key-value hash and returns an array with
+*  the following structure:
+*
+*  {key: 'val', foo: 'bar'}
+*  => ['--key', 'val', '--foo', 'bar']
+*/
 var toArgumentArray = function(src) {
   return _.reduceRight(src, function(prev, val, key) {
     return prev.concat("--"+key, val)
@@ -26,12 +33,19 @@ module.exports = function(options) {
 
   options = _.extend({}, defaults, options)
 
+  // Temp dir for the fontcustom command output
   var tmp = options.output = './___tmp___'
 
   var getGeneratedFiles = function() {
     return FS.list(tmp)
   }
 
+  /**
+  *  Creates a virtual file from an existing Vinyl file
+  *  along with the contents from a generated file.
+  *
+  *  @return A Promise
+  */
   var createVinylFromFile = function(file, generatedFile) {
     var tmpFile = path.join(tmp, generatedFile)
 
@@ -56,6 +70,12 @@ module.exports = function(options) {
     })
   }
 
+  /**
+  *  Used for transforming the SVG file objects with fontcustom
+  *
+  *  TODO: This function is called for every SVG icon in the
+  *  src destination. Not desirable :) Should instead wait.
+  */
   var collectIcons = function(source, enc, done) {
     var stream = this
 
