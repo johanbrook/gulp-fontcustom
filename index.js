@@ -78,8 +78,9 @@ module.exports = function(options) {
   */
   var collectIcons = function(source, enc, done) {
     var stream = this
+    var notDir = !source.isDirectory()
 
-    if(source.isNull()) {
+    if(notDir && source.isNull()) {
       stream.push(source)
       return done()
     }
@@ -89,12 +90,12 @@ module.exports = function(options) {
       return done()
     }
 
-    if('.svg' !== path.extname(source.path)) {
+    if(notDir && '.svg' !== path.extname(source.path)) {
       stream.push(source)
       return done()
     }
 
-    var input = path.dirname(source.path),
+    var input = notDir ? path.dirname(source.path) : source.path,
         args = toArgumentArray(options)
 
     // fontcustom compile /___tmp___ --output <output> [other options]

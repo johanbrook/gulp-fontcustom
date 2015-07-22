@@ -11,9 +11,10 @@ npm install --save gulp-fontcustom
 var gulp = require('gulp'),
     fontcustom = require('gulp-fontcustom')
 
-gulp.src("./icons/*.svg")
+gulp.src("./icons")
 .pipe(fontcustom({
-  font_name: 'myfont'  // defaults to 'fontcustom'
+  font_name: 'myfont',  // defaults to 'fontcustom',
+  'css-selector': '.prefix-{{glyph}}'
 }))
 .pipe(gulp.dest("./results"))
 ```
