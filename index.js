@@ -38,6 +38,12 @@ module.exports = function(options) {
 
   var getGeneratedFiles = function() {
     return FS.list(tmp)
+    .catch(function() {
+      return FS.makeDirectory(tmp)
+      .then(function() {
+        return FS.list(tmp);
+      });
+    });
   }
 
   /**
