@@ -1,6 +1,6 @@
 # gulp-fontcustom
 
-This is a [gulp](http://gulpjs.com/) plugin that takes a bunch of SVG files and converts them to font icon files with [Fontcustom](http://fontcustom.com/).
+This is a [gulp](http://gulpjs.com/) plugin that takes a bunch of SVG files and converts them to font icon files with [Fontcustom](https://github.com/FontCustom/fontcustom/).
 
 ## Usage
 
